@@ -1,0 +1,23 @@
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body {
+  font-family: Roboto, Arial;
+  background-color: rgb(248,248,248);
+  margin: 0;
+  padding-top: 80px;
+  padding-left: 96px;
+  padding-right: 24px;
+  
+}
+a {
+  text-decoration: none; /* removes underline */
+  color: inherit;        /* keeps the text color same as surrounding text */
+}
+a:hover,
+a:active {
+  text-decoration: none; /* or underline if you want hover effect */
+  color: inherit;
+}
