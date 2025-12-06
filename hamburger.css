@@ -1,0 +1,227 @@
+/* =========================
+   Root Variables
+   ========================= */
+:root {
+  --sidebar-width: 260px;
+  --topbar-height: 56px;
+  --bg: #ffffff;
+  --border: #e6e6e6;
+  --light-gray: #f3f3f3;
+  --muted: #6b6b6b;
+}
+
+/* =========================
+   Global Styles
+   ========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #111;
+  background: #fafafa;
+}
+
+/* =========================
+   Topbar
+   ========================= */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 50;
+}
+
+.hamburger {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 28px;
+  color: #111;
+}
+
+.yt-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.yt-logo {
+  height: 20px;
+  width: 93px;
+  margin-left: 22px;
+}
+
+/* =========================
+   Overlay
+   ========================= */
+.overlay {
+  position: fixed;
+  inset: 0;
+  
+  z-index: 45;
+  transition: opacity 0.25s ease;
+}
+
+/* =========================
+   Hamburger Sidebar
+   ========================= */
+#sidebar {
+  position: fixed;
+  top: var(--topbar-height);
+  left: -260px; /* Hidden by default */
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--topbar-height));
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  z-index: 60;
+  padding-bottom: 32px;
+  transition: left 0.3s ease;
+}
+
+#sidebar.open {
+  left: 0;
+}
+
+/* =========================
+   Mini Sidebar
+   ========================= */
+.mini-sidebar {
+  position: fixed;
+  left: 0;
+  top: 55px;
+  bottom: 0;
+  width: 72px;
+  background: #fff;
+  z-index: 40;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 74px;
+  cursor: pointer;
+}
+
+.link-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.0s ease;
+}
+
+.link-content:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.link-content img {
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.link-content div {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 10px;
+  text-align: center;
+}
+
+/* =========================
+   Navigation inside Hamburger Sidebar
+   ========================= */
+.nav {
+  padding: 8px 0;
+}
+
+.nav-group,
+.subs-group {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item,
+.sub-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 2px 8px;
+  font-size: 14px;
+  color: #111;
+}
+
+.nav-item:hover,
+.sub-item:hover {
+  background: var(--light-gray);
+}
+
+.nav-item.active {
+  background: #eee;
+  font-weight: 600;
+}
+
+.nav-item .nav-icon {
+  font-size: 20px;
+}
+
+.nav-item .nav-text {
+  line-height: 1;
+}
+
+/* =========================
+   Avatars and Subscriptions
+   ========================= */
+.avatar-img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.section-title {
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #222;
+}
+
+.sub-more {
+  color: #1976d2;
+  font-size: 13px;
+  padding: 10px 14px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 520px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+  .yt-logo {
+    height: 15px;
+  }
+}
