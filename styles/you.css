@@ -1,0 +1,185 @@
+/* YOU / CHANNEL PAGE STYLES */
+
+.channel-banner {
+    height: 16vh;
+    /* Approximate responsive height */
+    min-height: 100px;
+    max-height: 212px;
+    background-color: #f0f0f0;
+    /* Placeholder if no banner image */
+    width: 100%;
+}
+
+.channel-header {
+    max-width: 1284px;
+    margin: 0 auto;
+    padding: 16px 24px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.channel-header-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.channel-avatar {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.channel-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 12px;
+}
+
+.channel-title {
+    font-size: 36px;
+    /* Large title */
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.channel-meta {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.channel-meta span {
+    margin-right: 8px;
+}
+
+.channel-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: none;
+    padding: 0 16px;
+    height: 36px;
+    border-radius: 18px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--text-main);
+    font-family: Roboto, Arial;
+    transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.subscribe-btn-black {
+    background-color: #0f0f0f;
+    color: white;
+}
+
+.subscribe-btn-black:hover {
+    background-color: #272727;
+}
+
+/* Tabs */
+.channel-tabs {
+    max-width: 1284px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 4px;
+    /* Space from header */
+}
+
+.tab-item {
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-item.active {
+    color: var(--text-main);
+    border-bottom-color: var(--text-main);
+}
+
+.tab-item:hover {
+    color: var(--text-main);
+}
+
+/* Channel Content */
+.channel-content {
+    max-width: 1284px;
+    margin: 24px auto;
+    padding: 0 24px;
+}
+
+.horizontal-section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.section-title-text {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.section-scroll-container {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 16px;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.section-scroll-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+/* Dark Mode Overrides */
+body.dark-mode .action-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+body.dark-mode .action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .channel-banner {
+    background-color: #333;
+}
+
+body.dark-mode .subscribe-btn-black {
+    background-color: #f1f1f1;
+    color: #0f0f0f;
+}
+
+body.dark-mode .subscribe-btn-black:hover {
+    background-color: #d9d9d9;
+}
+
+body.dark-mode .channel-tabs {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
