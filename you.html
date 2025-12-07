@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamid Rafique - YouTube</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- Project CSS Files -->
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/tooltips.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/video.css">
+    <link rel="stylesheet" href="styles/you.css">
+</head>
+
+<body class="sidebar-expanded">
+
+    <!-- Backdrop for overlay mode -->
+    <div id="backdrop" class="backdrop"></div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-left">
+            <button class="icon-btn" id="menu-btn" aria-label="Menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="logo-container">
+                <a href="index.html" style="display:flex; align-items:center;">
+                    <img src="icons/youtube-logo.svg" alt="YouTube" class="youtube-logo">
+                </a>
+                <div class="tooltip">YouTube Home</div>
+            </div>
+        </div>
+
+        <div class="header-center">
+            <form class="search-form" onsubmit="event.preventDefault();">
+                <div class="search-input-container">
+                    <span style="display:none;" class="material-symbols-outlined nav-icon"
+                        id="search-focus-icon">search</span>
+                    <input type="text" class="search-box" placeholder="Search">
+                </div>
+                <button type="submit" class="search-button">
+                    <img src="icons/search.svg" alt="Search" class="search-icon" style="height: 24px;">
+                    <div class="tooltip">Search</div>
+                </button>
+            </form>
+            <button class="icon-btn mic-btn">
+                <img src="icons/voice-search-icon.svg" alt="Voice Search" class="voice-icon" style="height: 24px;">
+                <div class="tooltip">Search with your voice</div>
+            </button>
+            <div class="voice-search-popup" id="voice-search-popup">
+                <div class="voice-popup-content">
+                    <span class="material-symbols-outlined"
+                        style="font-size: 40px; color: var(--text-secondary);">mic</span>
+                    <p>To search with your voice, go to browser settings</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="div-create">
+                <button class="button-create">
+                    <img src="icons/plus.svg" alt="">
+                    <div>Create</div>
+                    <div class="tooltip">Create</div>
+                </button>
+                <div class="dropdown-menu create-dropdown" id="create-dropdown">
+                    <div class="dropdown-item">
+                        <span class="material-symbols-outlined">smart_display</span>
+                        <span>Upload Video</span>
+                    </div>
+                    <div class="dropdown-item">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <span>Go Live</span>
+                    </div>
+                    <div class="dropdown-item">
+                        <span class="material-symbols-outlined">edit_square</span>
+                        <span>Create Post</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notification-icon-container">
+                <span class="material-symbols-outlined">notifications</span>
+                <div class="notification-count">3</div>
+                <div class="tooltip">Notifications</div>
+                <div class="dropdown-menu notification-dropdown" id="notification-dropdown">
+                    <div class="dropdown-header">Notifications</div>
+                    <div class="notification-list">
+                        <div class="dropdown-item notification-item">
+                            <img src="channel-pictures/dpch1.jpg" class="notification-avatar">
+                            <div class="notification-text">
+                                <p class="notif-title">SuperSimpleDev uploaded: HTML & CSS Full Course</p>
+                                <p class="notif-time">3 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="dropdown-item notification-item">
+                            <img src="channel-pictures/mrbeast.jpg" class="notification-avatar">
+                            <div class="notification-text">
+                                <p class="notif-title">MrBeast: World's Fastest Man Vs Robot!</p>
+                                <p class="notif-time">1 day ago</p>
+                            </div>
+                        </div>
+                        <div class="dropdown-item notification-item">
+                            <img src="channel-pictures/cokestudio.jpg" class="notification-avatar">
+                            <div class="notification-text">
+                                <p class="notif-title">Coke Studio released a new song</p>
+                                <p class="notif-time">2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-container" style="position: relative;">
+                <img src="channel-pictures/channelpp.jpg" alt="Profile" class="user-avatar" title="Account"
+                    id="profile-btn">
+                <div class="dropdown-menu profile-dropdown" id="profile-dropdown">
+                    <div class="profile-header">
+                        <img src="channel-pictures/channelpp.jpg" class="profile-header-avatar">
+                        <div class="profile-info">
+                            <div class="profile-name">HAMID RAFIQUE</div>
+                            <div class="profile-handle">@hamidrafique1319</div>
+                            <a href="you.html" class="profile-link">View your channel</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item" id="appearance-toggle">
+                        <span class="material-symbols-outlined">contrast</span>
+                        <span>Appearance: <span id="appearance-text">Device theme</span></span>
+                        <span class="material-symbols-outlined"
+                            style="margin-left: auto; font-size: 20px;">chevron_right</span>
+                    </div>
+                    <div class="dropdown-item">
+                        <span class="material-symbols-outlined">settings</span>
+                        <span>Settings</span>
+                    </div>
+                    <div class="dropdown-item">
+                        <span class="material-symbols-outlined">help</span>
+                        <span>Help</span>
+                    </div>
+                    <div class="dropdown-item">
+                        <span class="material-symbols-outlined">feedback</span>
+                        <span>Send feedback</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header-overlay">
+            <button class="icon-btn" id="menu-btn-overlay">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="logo-container" style="margin-left: 16px;">
+                <a href="index.html" style="display:flex; align-items:center;">
+                    <img src="icons/youtube-logo.svg" alt="YouTube" class="youtube-logo">
+                </a>
+            </div>
+        </div>
+
+        <!-- FULL SIDEBAR CONTENT -->
+        <div class="full-sidebar-content">
+            <div class="nav-section">
+                <a href="index.html" class="nav-item">
+                    <span class="material-symbols-outlined nav-icon">home</span>
+                    <span class="nav-text">Home</span>
+                </a>
+                <a href="shorts.html" class="nav-item">
+                    <img src="icons/shorts.jpg" class="nav-icon"
+                        style="width:24px; height:24px; object-fit:contain; filter: grayscale(100%);">
+                    <span class="nav-text">Shorts</span>
+                </a>
+                <a href="subscription.html" class="nav-item">
+                    <span class="material-symbols-outlined nav-icon">subscriptions</span>
+                    <span class="nav-text">Subscriptions</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="section-title">You</div>
+                <a href="you.html" class="nav-item active"> <!-- Active Class -->
+                    <div class="nav-icon" style="font-weight: 700; font-size: 14px;">You</div>
+                    <span class="material-symbols-outlined nav-icon"
+                        style="margin-left: auto; font-size: 16px;">arrow_forward_ios</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-symbols-outlined nav-icon">history</span>
+                    <span class="nav-text">History</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-symbols-outlined nav-icon">playlist_play</span>
+                    <span class="nav-text">Playlists</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-symbols-outlined nav-icon">schedule</span>
+                    <span class="nav-text">Watch later</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-symbols-outlined nav-icon">thumb_up</span>
+                    <span class="nav-text">Liked videos</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="section-title">Subscriptions</div>
+                <a href="#" class="nav-item">
+                    <img src="icons/ary.jpg" class="user-avatar" style="width:24px;height:24px;margin-right:24px;">
+                    <span class="nav-text">ARY Digital</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="icons/geo.jpg" class="user-avatar" style="width:24px;height:24px;margin-right:24px;">
+                    <span class="nav-text">Geo News</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="icons/harpal.jpg" class="user-avatar" style="width:24px;height:24px;margin-right:24px;">
+                    <span class="nav-text">HAR PAL GEO</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- MINI SIDEBAR CONTENT -->
+        <div class="mini-sidebar-content">
+            <a href="index.html" class="mini-link">
+                <span class="material-symbols-outlined">home</span>
+                <span>Home</span>
+            </a>
+            <a href="shorts.html" class="mini-link">
+                <span class="material-symbols-outlined">smart_display</span>
+                <span>Shorts</span>
+            </a>
+            <a href="subscription.html" class="mini-link">
+                <span class="material-symbols-outlined">subscriptions</span>
+                <span>Subscriptions</span>
+            </a>
+            <a href="you.html" class="mini-link" style="color: var(--text-main);">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">video_library</span>
+                <span>You</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <div class="channel-header">
+            <div class="channel-header-top">
+                <img src="channel-pictures/channelpp.jpg" alt="Avatar" class="channel-avatar">
+                <div class="channel-info">
+                    <h1 class="channel-title">HAMID RAFIQUE</h1>
+                    <div class="channel-meta">
+                        @hamidrafique1319 • View channel
+                    </div>
+                    <div class="channel-buttons">
+                        <button class="action-btn">Switch account</button>
+                        <button class="action-btn">Google Account</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="channel-tabs">
+                <div class="tab-item active">Home</div>
+                <div class="tab-item">Videos</div>
+                <div class="tab-item">Shorts</div>
+                <div class="tab-item">Playlists</div>
+                <div class="tab-item">Community</div>
+            </div>
+        </div>
+
+        <div class="channel-content">
+            <!-- History Section -->
+            <div class="horizontal-section">
+                <div class="section-header">
+                    <div class="section-title-text">History</div>
+                    <button class="action-btn">View all</button>
+                </div>
+
+                <div class="section-scroll-container">
+                    <!-- Video 1 -->
+                    <a href="https://www.youtube.com/watch?v=science" class="video-card" style="min-width: 250px;">
+                        <div class="thumbnail-container">
+                            <img src="thumbnails/space_anim.jpg" alt="Thumbnail"
+                                style="object-fit:cover; height: 100%; width: 100%;">
+                            <span class="duration">12:45</span>
+                        </div>
+                        <div class="video-details">
+                            <div class="meta-data" style="margin-left: 0;">
+                                <h3 class="video-title">The Shocking Truth About Space Food in 2024</h3>
+                                <div class="channel-name">Kurzgesagt</div>
+                                <div class="views-time">1.2M views • 2 months ago</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Video 2 -->
+                    <a href="https://www.youtube.com/watch?v=burger" class="video-card" style="min-width: 250px;">
+                        <div class="thumbnail-container">
+                            <img src="thumbnails/ramsay_burger.jpg" alt="Thumbnail">
+                            <span class="duration">8:20</span>
+                        </div>
+                        <div class="video-details">
+                            <div class="meta-data" style="margin-left: 0;">
+                                <h3 class="video-title">Gordon Ramsay's Perfect Burger Guide</h3>
+                                <div class="channel-name">Gordon Ramsay</div>
+                                <div class="views-time">45M views • 3 years ago</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Video 3 -->
+                    <a href="https://www.youtube.com/watch?v=weeknd" class="video-card" style="min-width: 250px;">
+                        <div class="thumbnail-container">
+                            <img src="thumbnails/weeknd.jpg" alt="Thumbnail">
+                            <span class="duration">4:22</span>
+                        </div>
+                        <div class="video-details">
+                            <div class="meta-data" style="margin-left: 0;">
+                                <h3 class="video-title">The Weeknd - Save Your Tears (Official Music Video)</h3>
+                                <div class="channel-name">The Weeknd</div>
+                                <div class="views-time">800M views • 1 year ago</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Video 4: Tech -->
+                    <a href="https://www.youtube.com/watch?v=tech" class="video-card" style="min-width: 250px;">
+                        <div class="thumbnail-container">
+                            <img src="thumbnails/iphone16.jpg" alt="Thumbnail">
+                            <span class="duration">15:10</span>
+                        </div>
+                        <div class="video-details">
+                            <div class="meta-data" style="margin-left: 0;">
+                                <h3 class="video-title">iPhone 16 - Honest Review</h3>
+                                <div class="channel-name">MKBHD</div>
+                                <div class="views-time">4M views • 2 days ago</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Video 5: Gaming -->
+                    <a href="https://www.youtube.com/watch?v=mc" class="video-card" style="min-width: 250px;">
+                        <div class="thumbnail-container">
+                            <img src="thumbnails/minecraft.jpg" alt="Thumbnail">
+                            <span class="duration">25:40</span>
+                        </div>
+                        <div class="video-details">
+                            <div class="meta-data" style="margin-left: 0;">
+                                <h3 class="video-title">Minecraft Survival Ep. 1</h3>
+                                <div class="channel-name">Dream</div>
+                                <div class="views-time">10M views • 4 weeks ago</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Playlists Section -->
+            <div class="horizontal-section">
+                <div class="section-header">
+                    <div class="section-title-text">Playlists</div>
+                    <button class="action-btn">View all</button>
+                </div>
+                <div class="section-scroll-container">
+                    <div class="video-card" style="min-width: 250px;">
+                        <div class="thumbnail-container">
+                            <img src="thumbnails/coding.jpg" alt="Playlist"
+                                style="object-fit:cover; height: 100%; width: 100%;">
+                            <div
+                                style="position:absolute; bottom:0; right:0; background:rgba(0,0,0,0.8); color:white; padding:4px;">
+                                12 videos</div>
+                        </div>
+                        <div class="video-details">
+                            <div class="meta-data" style="margin-left: 0;">
+                                <h3 class="video-title">Web Development Course</h3>
+                                <div class="channel-name">HAMID RAFIQUE</div>
+                                <div class="views-time">Updated yesterday</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="scripts/sidebar.js"></script>
+    <script src="scripts/header.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/tooltips.js"></script>
+</body>
+
+</html>

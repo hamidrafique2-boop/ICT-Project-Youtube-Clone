@@ -1,0 +1,359 @@
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 2000;
+  background-color: white;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 0 4px;
+  position: relative;
+}
+
+.youtube-logo {
+  height: 20px;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 720px;
+  margin: 0 20px;
+}
+
+.search-form {
+  display: flex;
+  flex: 1;
+  max-width: 600px;
+  align-items: center;
+}
+
+.search-input-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--search-border);
+  border-right: none;
+  border-radius: 40px 0 0 40px;
+  padding: 0 16px;
+  height: 40px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.01);
+}
+
+.search-input-container:focus-within {
+  border-color: #1c62b9;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 2px #1c62b9;
+}
+
+.search-box {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: inherit;
+  line-height: 24px;
+}
+
+.search-button {
+  height: 40px;
+  width: 64px;
+  background: var(--search-bg);
+  border: 1px solid var(--search-border);
+  border-radius: 0 40px 40px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.search-button:hover {
+  background: #e6e6e6;
+}
+
+.mic-btn {
+  margin-left: 12px;
+  background: var(--hover-bg);
+  width: 40px;
+  height: 40px;
+}
+
+.mic-btn:hover {
+  background: #d9d9d9;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* Notification Icon Container specialized */
+.notification-icon-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.notification-icon-container:hover {
+  background-color: var(--hover-bg);
+}
+
+.notification-count {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: rgb(200, 0, 0);
+  color: white;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+
+/* Create Button (Inherited from Sample) */
+.div-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-create {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: Roboto, Arial, sans-serif;
+  padding: 0 16px;
+  height: 36px;
+  background-color: rgba(0, 0, 0, 0.05);
+  /* Match typical light grey pill */
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  border-radius: 18px;
+  /* Pill shape */
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.button-create:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.button-create img {
+  height: 24px;
+}
+
+/* Dropdown & Popup Defaults */
+.dropdown-menu,
+.voice-search-popup {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: var(--bg-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
+  z-index: 2002;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.voice-search-popup {
+  top: 60px;
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  padding: 24px;
+  text-align: center;
+}
+
+.voice-popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-main);
+}
+
+/* Generic Dropdown Item */
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  /* Adjusted padding */
+  cursor: pointer;
+  min-height: 48px;
+  /* Touch target size */
+  color: var(--text-main);
+  font-size: 14px;
+  /* Standard Youtube font size */
+  font-family: Roboto, Arial, sans-serif;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: var(--hover-bg);
+}
+
+.dropdown-item .material-symbols-outlined {
+  font-size: 24px;
+  color: #0f0f0f;
+}
+
+/* Specific Dropdown Widths */
+.create-dropdown {
+  width: 200px;
+  padding: 8px 0;
+}
+
+.notification-dropdown {
+  width: 480px;
+  max-width: 90vw;
+  right: -100px;
+  /* Adjusting alignment relative to bell */
+}
+
+.profile-dropdown {
+  width: 300px;
+  padding: 8px 0;
+  max-height: calc(100vh - 80px);
+  /* 56px header + margin */
+  overflow-y: auto;
+}
+
+/* Profile Specifics */
+.profile-header {
+  display: flex;
+  padding: 16px;
+  gap: 16px;
+}
+
+.profile-header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.profile-handle {
+  font-size: 14px;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+.profile-link {
+  color: #0d46a0;
+  /* This particular blue */
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 8px 0;
+}
+
+/* Notification Specifics */
+.dropdown-header {
+  padding: 10px 16px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.notification-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.notification-item {
+  align-items: flex-start;
+  padding: 12px 16px;
+}
+
+.notification-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.notification-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.notif-title {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.notif-time {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* Dark Mode Overrides for these specific elements handled in general.css mostly via vars, 
+   but specific icon colors might need help */
+body.dark-mode .dropdown-menu,
+body.dark-mode .voice-search-popup {
+  background-color: var(--bg-color);
+  /* Will become dark via var */
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .dropdown-item .material-symbols-outlined {
+  color: var(--text-main);
+}

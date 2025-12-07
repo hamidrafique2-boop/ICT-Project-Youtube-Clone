@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube</title>
+  <title>Subscriptions - YouTube</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +19,65 @@
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/sidebar.css">
   <link rel="stylesheet" href="styles/video.css">
+
+  <style>
+    /* Specific styles for subscription page headers */
+    .subscriptions-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-top: 24px;
+    }
+
+    .manage-button:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .manage-button:active {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .manage-button {
+      background: none;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      color: #065fd4;
+      font-weight: 500;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 18px;
+    }
+
+    .grid-button,
+    .list-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-main);
+      font-weight: 500;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 18px;
+    }
+
+    .grid-button:hover,
+    .list-button:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .subscriptions-left {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .subscriptions-right {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+  </style>
 </head>
 
 <body class="sidebar-expanded">
@@ -33,7 +92,9 @@
         <span class="material-symbols-outlined">menu</span>
       </button>
       <div class="logo-container">
-        <img src="icons/youtube-logo.svg" alt="YouTube" class="youtube-logo">
+        <a href="index.html" style="display:flex; align-items:center;">
+          <img src="icons/youtube-logo.svg" alt="YouTube" class="youtube-logo">
+        </a>
         <div class="tooltip">YouTube Home</div>
       </div>
     </div>
@@ -45,7 +106,6 @@
           <input type="text" class="search-box" placeholder="Search">
         </div>
         <button type="submit" class="search-button">
-          <!-- Updated Search Icon -->
           <img src="icons/search.svg" alt="Search" class="search-icon" style="height: 24px;">
           <div class="tooltip">Search</div>
         </button>
@@ -63,7 +123,6 @@
     </div>
 
     <div class="header-right">
-      <!-- Create Button (Inherited from Sample) -->
       <div class="div-create">
         <button class="button-create">
           <img src="icons/plus.svg" alt="">
@@ -199,7 +258,6 @@
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
 
-    <!-- Header for Sidebar when in Overlay Mode -->
     <div class="sidebar-header-overlay">
       <button class="icon-btn" id="menu-btn-overlay">
         <span class="material-symbols-outlined">menu</span>
@@ -209,20 +267,18 @@
       </div>
     </div>
 
-    <!-- FULL SIDEBAR CONTENT -->
     <div class="full-sidebar-content">
       <div class="nav-section">
-        <a href="#" class="nav-item active">
+        <a href="index.html" class="nav-item">
           <span class="material-symbols-outlined nav-icon">home</span>
           <span class="nav-text">Home</span>
         </a>
-        <a href="shorts.html" class="nav-item">
-          <!-- Fallback icon or image for shorts -->
+        <a href="#" class="nav-item">
           <img src="icons/shorts.jpg" class="nav-icon"
             style="width:24px; height:24px; object-fit:contain; filter: grayscale(100%);">
           <span class="nav-text">Shorts</span>
         </a>
-        <a href="subscription.html" class="nav-item">
+        <a href="subscription.html" class="nav-item active">
           <span class="material-symbols-outlined nav-icon">subscriptions</span>
           <span class="nav-text">Subscriptions</span>
         </a>
@@ -252,7 +308,6 @@
 
       <div class="nav-section">
         <div class="section-title">Subscriptions</div>
-        <!-- Sample subs with icons/ path -->
         <a href="#" class="nav-item">
           <img src="icons/ary.jpg" class="user-avatar" style="width:24px;height:24px;margin-right:24px;">
           <span class="nav-text">ARY Digital</span>
@@ -292,13 +347,12 @@
       </div>
     </div>
 
-    <!-- MINI SIDEBAR CONTENT -->
     <div class="mini-sidebar-content">
       <a href="index.html" class="mini-link">
         <span class="material-symbols-outlined">home</span>
         <span>Home</span>
       </a>
-      <a href="shorts.html" class="mini-link">
+      <a href="#" class="mini-link">
         <span class="material-symbols-outlined">smart_display</span>
         <span>Shorts</span>
       </a>
@@ -316,33 +370,83 @@
   <!-- MAIN CONTENT -->
   <main class="main-content">
 
-    <!-- CHIPS -->
-    <div class="chips-wrapper">
-      <div class="chips-container">
-        <button class="chip active">All</button>
-        <button class="chip">Music</button>
-        <button class="chip">Gaming</button>
-        <button class="chip">Mixes</button>
-        <button class="chip">Live</button>
-        <button class="chip">Cricket</button>
-        <button class="chip">Comedy</button>
-        <button class="chip">Thrillers</button>
-        <button class="chip">Programming</button>
-        <button class="chip">Pakistani dramas</button>
-        <button class="chip">News</button>
-        <button class="chip">Recently uploaded</button>
-        <button class="chip">New to you</button>
+    <div class="subscriptions-header">
+      <div class="subscriptions-left">Latest</div>
+      <div class="subscriptions-right">
+        <button class="manage-button">Manage</button>
+        <button class="grid-button">
+          <img src="icons/grid.svg" alt="Grid view" style="width:24px;">
+        </button>
+        <button class="list-button">
+          <img src="icons/list.svg" alt="List view" style="width:24px;">
+        </button>
       </div>
     </div>
 
     <!-- VIDEO GRID -->
     <div class="video-grid">
 
-      <!-- Video 1: iPhone 16 -->
-      <a href="https://www.youtube.com/watch?v=iphone16" class="video-card">
+      <!-- Video 1 -->
+      <a href="https://www.youtube.com/watch?v=fbise" class="video-card">
+        <div class="thumbnail-container">
+          <img src="thumbnails/fbise.avif" alt="Thumbnail">
+          <span class="duration">2:37:61</span>
+        </div>
+        <div class="video-details">
+          <div class="channel-icon-container">
+            <img src="channel-pictures/fbise.jpg" alt="Channel" class="channel-icon"
+              onerror="this.src='channel-pictures/channelpp.jpg'">
+          </div>
+          <div class="meta-data">
+            <h3 class="video-title">English Speech Competition 2025</h3>
+            <div class="channel-name">FBISE[Official]</div>
+            <div class="views-time">5.7K views • Streamed 7 days ago</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Video 2 -->
+      <a href="https://www.youtube.com/watch?v=cooking" class="video-card">
+        <div class="thumbnail-container">
+          <img src="thumbnails/hirakhawaja.avif" alt="Thumbnail">
+          <span class="duration">5:32</span>
+        </div>
+        <div class="video-details">
+          <div class="channel-icon-container">
+            <img src="channel-pictures/hirakhawaja.jpg" alt="Channel" class="channel-icon"
+              onerror="this.src='channel-pictures/channelpp.jpg'">
+          </div>
+          <div class="meta-data">
+            <h3 class="video-title">How to Make Delicious Chicken Wings 😋</h3>
+            <div class="channel-name">Hira Khawaja</div>
+            <div class="views-time">3K views • 3 days ago</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Video 3: Science Update -->
+      <a href="https://www.youtube.com/watch?v=kurz" class="video-card">
+        <div class="thumbnail-container">
+          <img src="thumbnails/space_anim.jpg" alt="Thumbnail">
+          <span class="duration">12:10</span>
+        </div>
+        <div class="video-details">
+          <div class="channel-icon-container">
+            <img src="channel-pictures/science_logo.jpg" alt="Channel" class="channel-icon">
+          </div>
+          <div class="meta-data">
+            <h3 class="video-title">The Egg - A Short Story</h3>
+            <div class="channel-name">Kurzgesagt – In a Nutshell</div>
+            <div class="views-time">30M views • 1 year ago</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Video 4: Tech -->
+      <a href="https://www.youtube.com/watch?v=tech" class="video-card">
         <div class="thumbnail-container">
           <img src="thumbnails/iphone16.jpg" alt="Thumbnail">
-          <span class="duration">14:20</span>
+          <span class="duration">10:05</span>
         </div>
         <div class="video-details">
           <div class="channel-icon-container">
@@ -350,261 +454,210 @@
               onerror="this.src='channel-pictures/channelpp.jpg'">
           </div>
           <div class="meta-data">
-            <h3 class="video-title">iPhone 16 Review: The New Standard?</h3>
+            <h3 class="video-title">The State of Apple - 2024</h3>
             <div class="channel-name">Marques Brownlee</div>
-            <div class="views-time">4.2M views • 1 day ago</div>
+            <div class="views-time">2.5M views • 5 hours ago</div>
           </div>
         </div>
       </a>
 
-      <!-- Video 2: GTA 6 -->
-      <a href="https://www.youtube.com/watch?v=gta6" class="video-card">
-        <div class="thumbnail-container">
-          <img src="thumbnails/gta6.jpg" alt="Thumbnail">
-          <span class="duration">1:30</span>
-        </div>
-        <div class="video-details">
-          <div class="channel-icon-container">
-            <img src="channel-pictures/gaming_logo.jpg" alt="Channel" class="channel-icon">
-          </div>
-          <div class="meta-data">
-            <h3 class="video-title">Grand Theft Auto VI Trailer 1</h3>
-            <div class="channel-name">Rockstar Games</div>
-            <div class="views-time">150M views • 2 weeks ago</div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Video 3: Minecraft -->
-      <a href="https://www.youtube.com/watch?v=minecraft" class="video-card">
+      <!-- Video 5: Gaming -->
+      <a href="https://www.youtube.com/watch?v=mc" class="video-card">
         <div class="thumbnail-container">
           <img src="thumbnails/minecraft.jpg" alt="Thumbnail">
-          <span class="duration">25:45</span>
+          <span class="duration">40:20</span>
         </div>
         <div class="video-details">
           <div class="channel-icon-container">
             <img src="channel-pictures/user1.jpg" alt="Channel" class="channel-icon">
           </div>
           <div class="meta-data">
-            <h3 class="video-title">Minecraft Manhunt - Speedrunner vs 5 Hunters</h3>
+            <h3 class="video-title">I Built a Civilization in Minecraft</h3>
             <div class="channel-name">Dream</div>
-            <div class="views-time">35M views • 1 month ago</div>
+            <div class="views-time">12M views • 2 weeks ago</div>
           </div>
         </div>
       </a>
 
-      <!-- Video 4: Lofi -->
-      <a href="https://www.youtube.com/watch?v=lofi" class="video-card">
+      <!-- Video 6: Music -->
+      <a href="https://www.youtube.com/watch?v=weeknd" class="video-card">
         <div class="thumbnail-container">
-          <img src="thumbnails/lofi.jpg" alt="Thumbnail">
-          <span class="duration">LIVE</span>
+          <img src="thumbnails/weeknd.jpg" alt="Thumbnail">
+          <span class="duration">3:50</span>
         </div>
         <div class="video-details">
           <div class="channel-icon-container">
             <img src="channel-pictures/music_logo.jpg" alt="Channel" class="channel-icon">
           </div>
           <div class="meta-data">
-            <h3 class="video-title">lofi hip hop radio - beats to relax/study to</h3>
-            <div class="channel-name">Lofi Girl</div>
-            <div class="views-time">40K watching</div>
+            <h3 class="video-title">The Weeknd - Save Your Tears (Official Music Video)</h3>
+            <div class="channel-name">The Weeknd</div>
+            <div class="views-time">1.1B views • 3 years ago</div>
           </div>
         </div>
       </a>
 
-      <!-- Video 5: MrBeast -->
-      <a href="https://www.youtube.com/watch?v=mrbeast" class="video-card">
+      <!-- Video 7: Food -->
+      <a href="https://www.youtube.com/watch?v=burger" class="video-card">
         <div class="thumbnail-container">
-          <img src="thumbnails/mrbeast_squid.jpg" alt="Thumbnail">
-          <span class="duration">22:15</span>
-        </div>
-        <div class="video-details">
-          <div class="channel-icon-container">
-            <img src="channel-pictures/mrbeast.jpg" alt="Channel" class="channel-icon">
-          </div>
-          <div class="meta-data">
-            <h3 class="video-title">$456,000 Squid Game In Real Life!</h3>
-            <div class="channel-name">MrBeast</div>
-            <div class="views-time">500M views • 2 years ago</div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Video 6: Science -->
-      <a href="https://www.youtube.com/watch?v=science" class="video-card">
-        <div class="thumbnail-container">
-          <img src="thumbnails/space_anim.jpg" alt="Thumbnail">
-          <span class="duration">10:50</span>
-        </div>
-        <div class="video-details">
-          <div class="channel-icon-container">
-            <img src="channel-pictures/science_logo.jpg" alt="Channel" class="channel-icon">
-          </div>
-          <div class="meta-data">
-            <h3 class="video-title">What If Earth was Kicked Out of the Solar System?</h3>
-            <div class="channel-name">Kurzgesagt – In a Nutshell</div>
-            <div class="views-time">8.1M views • 3 weeks ago</div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Video 7: Pasta -->
-      <a href="https://www.youtube.com/watch?v=pasta" class="video-card">
-        <div class="thumbnail-container">
-          <img src="thumbnails/pasta.jpg" alt="Thumbnail">
-          <span class="duration">12:30</span>
-        </div>
-        <div class="video-details">
-          <div class="channel-icon-container">
-            <img src="channel-pictures/user2.jpg" alt="Channel" class="channel-icon">
-          </div>
-          <div class="meta-data">
-            <h3 class="video-title">Pasta from Scratch | Basics with Babish</h3>
-            <div class="channel-name">Babish Culinary Universe</div>
-            <div class="views-time">12M views • 4 years ago</div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Video 8: Japan -->
-      <a href="https://www.youtube.com/watch?v=japan" class="video-card">
-        <div class="thumbnail-container">
-          <img src="thumbnails/japan.jpg" alt="Thumbnail">
-          <span class="duration">18:45</span>
-        </div>
-        <div class="video-details">
-          <div class="channel-icon-container">
-            <img src="channel-pictures/vlog_user.jpg" alt="Channel" class="channel-icon">
-          </div>
-          <div class="meta-data">
-            <h3 class="video-title">Moving to Japan was a mistake?</h3>
-            <div class="channel-name">PewDiePie</div>
-            <div class="views-time">9.5M views • 6 months ago</div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Video 9: F1 -->
-      <a href="https://www.youtube.com/watch?v=f1" class="video-card">
-        <div class="thumbnail-container">
-          <img src="thumbnails/car_race.jpg" alt="Thumbnail">
-          <span class="duration">8:22</span>
-        </div>
-        <div class="video-details">
-          <div class="channel-icon-container">
-            <img src="channel-pictures/user3.jpg" alt="Channel" class="channel-icon">
-          </div>
-          <div class="meta-data">
-            <h3 class="video-title">Race Highlights | 2024 Abu Dhabi Grand Prix</h3>
-            <div class="channel-name">FORMULA 1</div>
-            <div class="views-time">5.2M views • 1 day ago</div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Video 10: Chess -->
-      <a href="https://www.youtube.com/watch?v=chess" class="video-card">
-        <div class="thumbnail-container">
-          <img src="thumbnails/chess.jpg" alt="Thumbnail">
-          <span class="duration">14:05</span>
+          <img src="thumbnails/ramsay_burger.jpg" alt="Thumbnail">
+          <span class="duration">9:15</span>
         </div>
         <div class="video-details">
           <div class="channel-icon-container">
             <img src="channel-pictures/user4.jpg" alt="Channel" class="channel-icon">
           </div>
           <div class="meta-data">
-            <h3 class="video-title">Magnus Carlsen vs Hikaru Nakamura | Speed Chess</h3>
-            <div class="channel-name">Chess.com</div>
-            <div class="views-time">2.1M views • 2 days ago</div>
+            <h3 class="video-title">Gordon Ramsay's Ultimate Burger</h3>
+            <div class="channel-name">Gordon Ramsay</div>
+            <div class="views-time">60M views • 5 years ago</div>
           </div>
         </div>
       </a>
 
-      <!-- Video 11: Coding -->
-      <a href="https://www.youtube.com/watch?v=coding" class="video-card">
+      <!-- Video 8: Space -->
+      <a href="https://www.youtube.com/watch?v=moon" class="video-card">
         <div class="thumbnail-container">
-          <img src="thumbnails/coding.jpg" alt="Thumbnail">
-          <span class="duration">4:30:15</span>
-        </div>
-        <div class="video-details">
-          <div class="channel-icon-container">
-            <img src="channel-pictures/business_user.jpg" alt="Channel" class="channel-icon">
-          </div>
-          <div class="meta-data">
-            <h3 class="video-title">Learn Python - Full Course for Beginners [Tutorial]</h3>
-            <div class="channel-name">freeCodeCamp.org</div>
-            <div class="views-time">41M views • 3 years ago</div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Video 12: Rocket -->
-      <a href="https://www.youtube.com/watch?v=rocket" class="video-card">
-        <div class="thumbnail-container">
-          <img src="thumbnails/rocket.jpg" alt="Thumbnail">
-          <span class="duration">45:10</span>
+          <img src="thumbnails/nasa_artemis.jpg" alt="Thumbnail">
+          <span class="duration">LIVE</span>
         </div>
         <div class="video-details">
           <div class="channel-icon-container">
             <img src="channel-pictures/tech_logo.jpg" alt="Channel" class="channel-icon">
           </div>
           <div class="meta-data">
-            <h3 class="video-title">Starship Flight 3 Test Launch</h3>
-            <div class="channel-name">SpaceX</div>
-            <div class="views-time">6.7M views • 8 months ago</div>
+            <h3 class="video-title">NASA Live: Official Stream of NASA TV</h3>
+            <div class="channel-name">NASA</div>
+            <div class="views-time">12K watching</div>
           </div>
         </div>
       </a>
 
-      <!-- Video 13: Concert -->
-      <a href="https://www.youtube.com/watch?v=concert" class="video-card">
+      <!-- Video 9 -->
+      <a href="https://www.youtube.com/watch?v=D2OuCEmFASg" class="video-card">
         <div class="thumbnail-container">
-          <img src="thumbnails/concert.jpg" alt="Thumbnail">
-          <span class="duration">3:45</span>
+          <img src="thumbnails/towardseternity.avif" alt="Thumbnail">
+          <span class="duration">17:07</span>
         </div>
         <div class="video-details">
           <div class="channel-icon-container">
-            <img src="channel-pictures/cokestudio.jpg" alt="Channel" class="channel-icon">
+            <img src="channel-pictures/toawrdseternity.jpg" alt="Channel" class="channel-icon"
+              onerror="this.src='channel-pictures/channelpp.jpg'">
           </div>
           <div class="meta-data">
-            <h3 class="video-title">Taylor Swift - Cruel Summer (Live from The Eras Tour)</h3>
-            <div class="channel-name">TaylorSwiftVEVO</div>
-            <div class="views-time">55M views • 1 year ago</div>
+            <h3 class="video-title">Is Jesus God or a Prophet? - The Great AI Debate!</h3>
+            <div class="channel-name">Towards Eternity</div>
+            <div class="views-time">198K views • 3 days ago</div>
           </div>
         </div>
       </a>
 
-      <!-- Video 14: Gaming Fantasy -->
-      <a href="https://www.youtube.com/watch?v=eldenring" class="video-card">
+      <!-- Video 10 -->
+      <a href="https://www.youtube.com/watch?v=a18py61_F_w" class="video-card">
         <div class="thumbnail-container">
-          <img src="thumbnails/gaming_fantasy.jpg" alt="Thumbnail">
-          <span class="duration">12:00</span>
+          <img src="thumbnails/zainulabedin.avif" alt="Thumbnail">
+          <span class="duration">33:41</span>
         </div>
         <div class="video-details">
           <div class="channel-icon-container">
-            <img src="channel-pictures/gaming_logo.jpg" alt="Channel" class="channel-icon">
+            <img src="channel-pictures/zainulabiden.jpg" alt="Channel" class="channel-icon"
+              onerror="this.src='channel-pictures/channelpp.jpg'">
           </div>
           <div class="meta-data">
-            <h3 class="video-title">Elden Ring: Shadow of the Erdtree - Official Trailer</h3>
-            <div class="channel-name">BANDAI NAMCO</div>
-            <div class="views-time">18M views • 4 months ago</div>
+            <h3 class="video-title">Camping in Cold Weather 🥶</h3>
+            <div class="channel-name">Zain Ul Abadin</div>
+            <div class="views-time">31K views • 1 hour ago</div>
           </div>
         </div>
       </a>
 
-      <!-- Video 15: Sports -->
-      <a href="https://www.youtube.com/watch?v=dudeperfect" class="video-card">
+      <!-- Video 11: Dude Perfect -->
+      <a href="https://www.youtube.com/watch?v=dp" class="video-card">
         <div class="thumbnail-container">
           <img src="thumbnails/sports.jpg" alt="Thumbnail">
-          <span class="duration">15:22</span>
+          <span class="duration">14:20</span>
         </div>
         <div class="video-details">
           <div class="channel-icon-container">
             <img src="channel-pictures/sharum.jpg" alt="Channel" class="channel-icon">
           </div>
           <div class="meta-data">
-            <h3 class="video-title">Real Life Trick Shots 3 | Dude Perfect</h3>
+            <h3 class="video-title">Airplane Trick Shots | Dude Perfect</h3>
             <div class="channel-name">Dude Perfect</div>
-            <div class="views-time">220M views • 5 years ago</div>
+            <div class="views-time">100M views • 4 years ago</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Video 12: Pasta 2 -->
+      <a href="https://www.youtube.com/watch?v=pasta2" class="video-card">
+        <div class="thumbnail-container">
+          <img src="thumbnails/pasta.jpg" alt="Thumbnail">
+          <span class="duration">15:00</span>
+        </div>
+        <div class="video-details">
+          <div class="channel-icon-container">
+            <img src="channel-pictures/user2.jpg" alt="Channel" class="channel-icon">
+          </div>
+          <div class="meta-data">
+            <h3 class="video-title">Making The Bear's Spaghetti | Binging with Babish</h3>
+            <div class="channel-name">Babish Culinary Universe</div>
+            <div class="views-time">4M views • 6 months ago</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Video 13: F1 -->
+      <a href="https://www.youtube.com/watch?v=f1_2" class="video-card">
+        <div class="thumbnail-container">
+          <img src="thumbnails/car_race.jpg" alt="Thumbnail">
+          <span class="duration">6:45</span>
+        </div>
+        <div class="video-details">
+          <div class="channel-icon-container">
+            <img src="channel-pictures/tech_logo.jpg" alt="Channel" class="channel-icon">
+          </div>
+          <div class="meta-data">
+            <h3 class="video-title">Top 10 Overtakes of 2024</h3>
+            <div class="channel-name">FORMULA 1</div>
+            <div class="views-time">2.3M views • 1 week ago</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Video 14: Chess -->
+      <a href="https://www.youtube.com/watch?v=chess2" class="video-card">
+        <div class="thumbnail-container">
+          <img src="thumbnails/chess.jpg" alt="Thumbnail">
+          <span class="duration">12:12</span>
+        </div>
+        <div class="video-details">
+          <div class="channel-icon-container">
+            <img src="channel-pictures/user3.jpg" alt="Channel" class="channel-icon">
+          </div>
+          <div class="meta-data">
+            <h3 class="video-title">How to Play Chess: The Ultimate Guide</h3>
+            <div class="channel-name">GothamChess</div>
+            <div class="views-time">5M views • 2 years ago</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Video 15: Atif Ahmed (Original) -->
+      <a href="https://www.youtube.com/watch?v=Ah_uuTwGOYU" class="video-card">
+        <div class="thumbnail-container">
+          <img src="thumbnails/atifahmed.avif" alt="Thumbnail">
+          <span class="duration">30:20</span>
+        </div>
+        <div class="video-details">
+          <div class="channel-icon-container">
+            <img src="channel-pictures/atifahmed.jpg" alt="Channel" class="channel-icon"
+              onerror="this.src='channel-pictures/channelpp.jpg'">
+          </div>
+          <div class="meta-data">
+            <h3 class="video-title">Exercise 8.3 class 10 maths nbf question 3 || ex 8.3 class 10</h3>
+            <div class="channel-name">Atif Ahmed Official</div>
+            <div class="views-time">2K views • 4 days ago</div>
           </div>
         </div>
       </a>
