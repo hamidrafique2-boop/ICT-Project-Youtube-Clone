@@ -72,6 +72,13 @@ body.dark-mode .topic-card {
     transform: scale(1.1) rotate(5deg);
 }
 
+.emoji-icon {
+    font-size: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .topic-title {
     font-size: 1.5rem;
     font-weight: 700;
