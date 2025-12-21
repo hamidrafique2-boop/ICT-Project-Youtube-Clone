@@ -73,10 +73,11 @@ body.dark-mode .topic-card {
 }
 
 .emoji-icon {
-    font-size: 3.5rem;
+    font-size: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 1;
 }
 
 .topic-title {
