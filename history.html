@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNova - History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadHistory()">
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">QuizNova</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About / Instructions</a></li>
+            <li><a href="feedback.html">Feedback / Help</a></li>
+            <li><a href="history.html" class="active">Quiz History</a></li>
+            <li><button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">🌙 Dark</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="card-single">
+            <h1>Session History</h1>
+            <p>Your recent quiz attempts in this session.</p>
+
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Topic</th>
+                        <th>Score</th>
+                        <th>Date & Time</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body">
+                    <!-- Injected by JS -->
+                </tbody>
+            </table>
+
+            <button onclick="clearHistory()" class="btn-danger" style="margin-top: 20px;">Clear History</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

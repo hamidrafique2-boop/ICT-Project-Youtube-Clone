@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNova - Scoreboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">QuizNova</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About / Instructions</a></li>
+            <li><a href="feedback.html">Feedback / Help</a></li>
+            <li><a href="history.html">Quiz History</a></li>
+            <li><button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">🌙 Dark</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Global Scoreboard</h1>
+            <p>See how you rank among other students!</p>
+        </div>
+
+        <table class="scoreboard-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Student Name</th>
+                    <th>Roll No</th>
+                    <th>Topic</th>
+                    <th>Score</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="scoreboard-body">
+                <!-- Data injected by JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = loadScoreboard;
+    </script>
+</body>
+
+</html>

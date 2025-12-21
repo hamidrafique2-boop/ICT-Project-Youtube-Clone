@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNova - Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="showResult()">
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">QuizNova</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About / Instructions</a></li>
+            <li><a href="feedback.html">Feedback / Help</a></li>
+            <li><a href="history.html">Quiz History</a></li>
+            <li><button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">🌙 Dark</button></li>
+        </ul>
+    </nav>
+
+    <div class="container" style="text-align: center;">
+        <div class="card-single">
+            <h1>Quiz Complete!</h1>
+            <p style="color: #666;">Here is how you performed:</p>
+
+            <div id="score-display" class="result-score">0 / 10</div>
+
+            <div id="performance-msg" class="badge">Checking...</div>
+
+            <div style="display: flex; gap: 15px; justify-content: center; margin-top: 20px;">
+                <a href="index.html" class="btn-primary" style="text-decoration: none;">Go Home</a>
+                <a href="index.html" class="btn-secondary" style="text-decoration: none;">New Quiz</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

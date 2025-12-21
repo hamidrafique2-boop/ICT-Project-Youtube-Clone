@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNova - About & Instructions</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Using FontAwesome for Icons (Optional, checking if user has it, if not I will use text/emojis or robust SVG imports if I had them. 
+         Since I assume no external libs unless asked, I will use Emoji/CSS shapes or basic text for simplicity as per "Beginner-friendly" constraint) 
+         Actually, the prompt asked for "Icons", I will use simple Unicode characters to keep it dependency-free. -->
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">QuizNova</a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About / Instructions</a></li>
+            <li><a href="feedback.html">Feedback / Help</a></li>
+            <li><a href="history.html">Quiz History</a></li>
+            <li><button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">🌙 Dark</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <!-- SECTION 1: ABOUT QUIZNOVA -->
+        <div class="card-single" style="text-align: center; margin-bottom: 3rem;">
+            <h1>About QuizNova</h1>
+
+            <!-- Educational Image -->
+            <img src="images/about_img.svg" alt="Learning Concept"
+                style="width: 250px; margin: 2rem auto; display: block;">
+
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+                Welcome to <strong>QuizNova</strong>, a dedicated interactive learning platform designed specifically
+                for ICT students.
+                Our purpose is to help you self-assess your knowledge in <span
+                    style="color: var(--primary);">Programming</span>,
+                <span style="color: var(--secondary);">Mathematics</span>, and <span style="color: var(--accent);">Cyber
+                    Security</span>.
+                <br><br>
+                This project was built as an Academic ICT project to demonstrate modern web development practices while
+                keeping things simple,
+                friendly, and easy to use.
+            </p>
+        </div>
+
+        <!-- SECTION 2: HOW TO PLAY -->
+        <div class="intro-text" style="margin-bottom: 1rem;">
+            <h2>How to Play</h2>
+            <p>Follow these simple steps to start testing your skills.</p>
+        </div>
+
+        <div class="step-list">
+            <div class="step-item">
+                <div class="step-num">1</div>
+                <div>
+                    <h3>Select a Topic</h3>
+                    <p style="color: var(--text-muted);">Choose a subject from the Home page (e.g., C++, Discrete Math).
+                    </p>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-num">2</div>
+                <div>
+                    <h3>Answer Questions</h3>
+                    <p style="color: var(--text-muted);">Questions appear one by one. Read carefully and select the best
+                        option.</p>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-num">3</div>
+                <div>
+                    <h3>Finish & View Score</h3>
+                    <p style="color: var(--text-muted);">After 10 questions, submit your quiz to see your final score
+                        and performance badge.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3 & 4: RULES (Scoring & Timer) -->
+        <div class="intro-text" style="margin-top: 4rem; margin-bottom: 1rem;">
+            <h2>Game Rules</h2>
+            <p>Understand how the scoring and system works.</p>
+        </div>
+
+        <div class="rules-grid">
+            <!-- Scoring Rules -->
+            <div class="rule-box">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏆</div>
+                <h3>Scoring System</h3>
+                <ul style="list-style: none; margin-top: 1rem; text-align: left; opacity: 0.9; line-height: 1.6;">
+                    <li>✅ <strong>+1 Point</strong> for every correct answer.</li>
+                    <li>❌ <strong>0 Points</strong> for wrong answers.</li>
+                    <li>📊 <strong>Total Score</strong> is out of 10.</li>
+                </ul>
+            </div>
+
+            <!-- Timer Rules -->
+            <div class="rule-box">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">⏳</div>
+                <h3>Timer Rules</h3>
+                <ul style="list-style: none; margin-top: 1rem; text-align: left; opacity: 0.9; line-height: 1.6;">
+                    <li>⏱️ Each question has a timer (if enabled).</li>
+                    <li>⏭️ If time runs out, the question is <strong>skipped</strong>.</li>
+                    <li>🚫 No points are awarded for skipped questions.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 5: CONTACT -->
+        <div class="contact-section">
+            <h2>Contact Us</h2>
+            <p style="margin-bottom: 2rem;">Have questions or suggestions? Reach out to us!</p>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                <div
+                    style="background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 50px; font-weight: 500;">
+                    📧 Email: <a href="mailto:support@quiznova.com"
+                        style="color: white; text-decoration: underline;">support@quiznova.com</a>
+                </div>
+                <div style="opacity: 0.8; font-size: 0.9rem;">
+                    * This is a demo project for academic purposes only.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2025 QuizNova Education. | Academic Project
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

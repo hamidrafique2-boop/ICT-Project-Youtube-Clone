@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNova - Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">QuizNova</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About / Instructions</a></li>
+            <li><a href="feedback.html" class="active">Feedback / Help</a></li>
+            <li><a href="history.html">Quiz History</a></li>
+            <li><button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">🌙 Dark</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="card-single">
+            <h1>We Value Your Feedback</h1>
+            <p>Let us know how we can improve QuizNova for you.</p>
+
+            <form onsubmit="submitFeedback(event)" style="margin-top: 30px; max-width: 500px;">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" class="form-control" required placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" class="form-control" required
+                        placeholder="Type your feedback here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

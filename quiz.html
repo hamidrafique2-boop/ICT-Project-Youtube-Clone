@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNova - Quiz Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadQuiz()">
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">QuizNova</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About / Instructions</a></li>
+            <li><a href="feedback.html">Feedback / Help</a></li>
+            <li><a href="history.html">Quiz History</a></li>
+            <li><button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">🌙 Dark</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Loading Overlay -->
+        <div id="loading" class="loading-overlay">Fetching Questions...</div>
+
+        <div class="card-single">
+            <!-- Header: Topic & Question Count -->
+            <div class="quiz-header">
+                <span id="topic-display" class="topic-label">Topic</span>
+                <span id="question-count" class="question-meta">Question 1 of 10</span>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+
+            <!-- Question Text -->
+            <h2 id="question-text" class="question-text">Loading...</h2>
+
+            <!-- Options (Injected by JS) -->
+            <div id="options-container"></div>
+
+            <!-- Action Buttons -->
+            <div class="btn-group">
+                <button onclick="cancelQuiz()" class="btn-danger">Cancel Quiz</button>
+                <button id="next-btn" onclick="nextQuestion()" class="btn-primary" style="display:none;">Next Question
+                    &rarr;</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
