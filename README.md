@@ -76,20 +76,16 @@ The project is successfully deployed using **GitHub Pages**. Any changes pushed 
 
 ## Screenshots
 ### Home Page
-![Home Page Placeholder](images/banner.png)
-*(Replace with actual screenshot after deployment)*
+![Home Page](images/homepage.png)
 
 ### About / Instructions
-![About Page Placeholder](images/about_img.svg)
-*(Sample Image used in-app)*
+![About Page](images/about.png)
 
 ### Feedback / Help
-> ![Feedback Section]
-*(Add your feedback page screenshot here)*
+![Feedback Page](images/feedback.png)
 
 ### Quiz History
-> ![History Table]
-*(Add your history page screenshot here)*
+![Quiz History Page](images/quizhistory.png)
 
 ## Conclusion
 The **ICT Quiz Website** serves as a robust example of modern web development applied to education. By focusing on user experience, performance, and clear feedback loops, it provides significant value to students looking to reinforce their academic foundations through interactive technology.
