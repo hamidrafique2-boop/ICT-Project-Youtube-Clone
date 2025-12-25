@@ -1,6 +1,6 @@
 # ICT Quiz Website
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://hamidrafique2-boop.github.io/ICT-Project-Quiz-Website/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://hamidrafique2-boop.github.io/ICT-Project-Quiz-Assessment-Website/)
 
 An interactive, modern, and professional frontend quiz platform built for students to master fundamental academic subjects. This project combines sleek UI design with robust JavaScript logic to provide a seamless learning experience.
 
@@ -72,7 +72,7 @@ The platform features **six major subjects**:
 ## Deployment
 The project is successfully deployed using **GitHub Pages**. Any changes pushed to the main repository are automatically reflected in the live environment.
 
-🔗 **Live Link**: [View the Deployed Site](https://hamidrafique2-boop.github.io/ICT-Project-Quiz-Website/)
+🔗 **Live Link**: [View the Deployed Site](https://hamidrafique2-boop.github.io/ICT-Project-Quiz-Assessment-Website/)
 
 ## Screenshots
 ### Home Page
